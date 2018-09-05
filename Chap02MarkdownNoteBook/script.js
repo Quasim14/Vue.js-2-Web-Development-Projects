@@ -34,3 +34,4 @@ new Vue({
     },
 })
 
+console.log('Note restaurée:', localStorage.getItem('content'))
