@@ -33,6 +33,20 @@ new Vue({
             console.log('Note sauvegradée:', this.content)
             localStorage.setItem('content', this.content)
         },
+
+        addNote(){
+            const time = Date.now()
+            // Default new note
+            const note ={
+                id: String(time),
+                title: 'Nouvelle note ' + (this.notes.length + 1),
+                content:'**Salut!** Ce notebook utilise [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) pour le formatage!',
+                created: time,
+                favorite: false,
+            }
+            // Add to the list
+            this.notes.push(note)
+        },
     },
 
     created(){
