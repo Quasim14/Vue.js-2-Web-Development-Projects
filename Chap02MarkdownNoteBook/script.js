@@ -10,6 +10,8 @@ new Vue({
             content : localStorage.getItem('content') || 'You can write in **markdown**',
             // A note Array
             notes: [],
+            // Id of the selected note
+            selectedId: null,
         }
     },
 
@@ -50,6 +52,9 @@ new Vue({
             }
             // Add to the list
             this.notes.push(note)
+        },
+        selectNote (note){
+            this.selectedId = note.id
         },
     },
 
