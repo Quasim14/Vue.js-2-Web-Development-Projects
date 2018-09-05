@@ -18,12 +18,19 @@ new Vue({
       },
     },
 
+
     // Change watchers
     watch:{
-        content(val, oldVal){
-            console.log('Nouvelle note : ',val, 'Ancienne note: ',oldVal)
-            localStorage.setItem('content', val)
+        content:{
+            handler: 'saveNote',
         },
+    },
+
+    methods:{
+        saveNote(val){
+            console.log('saving note:', val)
+            localStorage.setItem('content', val)
+        }
     },
 })
 
