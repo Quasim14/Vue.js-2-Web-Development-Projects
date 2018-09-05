@@ -13,7 +13,15 @@ new Vue({
         return{
             content : 'Ceci est une note.'
         }
+    },
 
-    }
+    computed:{
+      notePreview(){
+          // Markdown rendered to HTML
+          return marked(this.content)
+
+      },
+    },
+
 })
 
