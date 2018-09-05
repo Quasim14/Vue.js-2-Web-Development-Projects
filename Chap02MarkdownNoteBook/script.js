@@ -8,9 +8,11 @@ new Vue({
     el: '#notebook',
 
     data(){
+
         return{
             content : 'Ceci est une note.'
         }
+
     }
 })
 
