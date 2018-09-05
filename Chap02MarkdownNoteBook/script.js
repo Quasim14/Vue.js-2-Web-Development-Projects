@@ -1,10 +1,6 @@
-
-
 // VueJs Instance
-
 new Vue({
     //CSS selector of the root DOM element
-
     el: '#notebook',
 
     data(){
@@ -19,9 +15,15 @@ new Vue({
       notePreview(){
           // Markdown rendered to HTML
           return marked(this.content)
-
       },
     },
 
+    // Change watchers
+    watch:{
+        content(val, oldVal){
+            console.log('Nouvelle note : ',val, 'Ancienne note: ',oldVal)
+            localStorage.setItem('content', val)
+        },
+    },
 })
 
