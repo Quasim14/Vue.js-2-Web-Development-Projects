@@ -28,8 +28,12 @@ new Vue({
 
     methods:{
         saveNote(val){
-            console.log('saving note:', val)
+            console.log('Note sauvegradée:', val)
             localStorage.setItem('content', val)
+            this.reportOperation('savegarde est en cours .... ... ..')
+        },
+        reportOperation(opName){
+            console.log('La', opName, 'l\'operation est terminée!')
         }
     },
 })
