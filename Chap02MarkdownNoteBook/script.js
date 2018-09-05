@@ -7,7 +7,9 @@ new Vue({
         const html = marked('**Bold** *Italic* [link](http://vuejs.org/)')
             console.log(html)
         return{
-            content : 'Ceci est une note.'
+            content : localStorage.getItem('content') || 'You can write in **markdown**',
+            // A note Array
+            notes: [],
         }
     },
 
