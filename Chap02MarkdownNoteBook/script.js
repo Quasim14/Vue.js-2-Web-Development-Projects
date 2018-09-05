@@ -32,6 +32,10 @@ new Vue({
             localStorage.setItem('content', this.content)
         },
     },
+
+    created(){
+        this.content = localStorage.getItem('content')|| 'Vous pouvez ecrire une note'
+    }
 })
 
 console.log('Note restaurée:', localStorage.getItem('content'))
