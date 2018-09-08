@@ -9,7 +9,7 @@ new Vue({
             // A note Array
             notes: JSON.parse(localStorage.getItem('notes')) || [],
             // Id of the selected note
-            selectedId: null,
+            selectedId: localStorage.getItem('selected-id') || null,
         }
     },
 
@@ -30,6 +30,10 @@ new Vue({
     // Change watchers
     watch:{
         notes: 'saveNotes',
+        // Let's save the selection too
+        selectId(val){
+            localStorage.setItem('selected-id',val)
+        },
     },
 
     methods:{
