@@ -30,20 +30,15 @@
 
          <!-- Main pane -->
          <section class="main">
-             <textarea v-model="content"></textarea>
+                <textarea v-model="selectedNote.content"></textarea>
          </section>
 
           <!-- Preview pane -->
-         <aside class="preview" v-html="notePreview">
+         <aside class="preview"  v-html="notePreview">
 
          </aside>
 
      </div>
-
-
-
-
-
 
     <!-- Some JavaScript -->
     <script src="script.js"></script>

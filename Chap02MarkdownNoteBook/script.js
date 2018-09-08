@@ -4,10 +4,8 @@ new Vue({
     el: '#notebook',
 
     data(){
-        const html = marked('**Bold** *Italic* [link](http://vuejs.org/)')
-            console.log(html)
+
         return{
-            content : localStorage.getItem('content') || 'You can write in **markdown**',
             // A note Array
             notes: [],
             // Id of the selected note
@@ -17,28 +15,30 @@ new Vue({
 
     computed:{
         notePreview(){
-          // Markdown rendered to HTML
-          return marked(this.content)
+            // Markdown rendered to HTML
+            return this.selectedNote ? marked(this.selectedNote.content) : ''
         },
         addButtonTitle(){
             return this.notes.length + ' note(s)'
         },
+        selectedNote(){
+             return this.notes.find(note => note.id === this.selectedId)
+        },
 
     },
-
 
     // Change watchers
-    watch:{
-        content:{
-            handler: 'saveNote',
-        },
-    },
+    // watch:{
+    //     content:{
+    //         handler: 'saveNote',
+    //     },
+    // },
 
     methods:{
-        saveNote(){
-            console.log('Note sauvegradée:', this.content)
-            localStorage.setItem('content', this.content)
-        },
+        // saveNote(){
+        //     console.log('Note sauvegradée:', this.content)
+        //     localStorage.setItem('content', this.content)
+        // },
 
         addNote(){
             const time = Date.now()
@@ -57,10 +57,4 @@ new Vue({
             this.selectedId = note.id
         },
     },
-
-    created(){
-        this.content = localStorage.getItem('content')|| 'Vous pouvez ecrire une note'
-    }
 })
-
-console.log('Note restaurée:', localStorage.getItem('content'))
