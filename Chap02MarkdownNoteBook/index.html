@@ -49,8 +49,21 @@
                  <div class="toolbar status-bar">
                      <!-- The new status bar here! -->
                      <span class="date">
-                         <span class="label">Crée le :</span>
+                         <span class="label">Crée le : </span>
                          <span class="value">{{ selectedNote.created | myDateFormat }}</span>
+                     </span>
+
+                     <span class="lines">
+                         <span class="label">Lignes : </span>
+                         <span class="value">{{ linesCount }}</span>
+                     </span>
+                     <span class="words">
+                         <span class="label">Mots : </span>
+                         <span class="value">{{ wordsCount }}</span>
+                     </span>
+                     <span class="characters">
+                         <span class="label">Lettres : </span>
+                         <span class="value">{{ charactersCount }}</span>
                      </span>
 
                  </div>
