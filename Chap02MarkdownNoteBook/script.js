@@ -1,3 +1,6 @@
+Vue.filter('myDateFormat', time => moment(time).format('DD/MM/YY, à  HH:mm'))
+
+
 // VueJs Instance
 new Vue({
     //CSS selector of the root DOM element

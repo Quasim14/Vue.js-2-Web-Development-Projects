@@ -48,6 +48,10 @@
 
                  <div class="toolbar status-bar">
                      <!-- The new status bar here! -->
+                     <span class="date">
+                         <span class="label">Crée le :</span>
+                         <span class="value">{{ selectedNote.created | myDateFormat }}</span>
+                     </span>
 
                  </div>
 
@@ -63,6 +67,7 @@
 
     <!-- Some JavaScript -->
     <script src="script.js"></script>
+    <script src="https://unpkg.com/moment"></script>
 
 </body>
 </html>
